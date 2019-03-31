@@ -4,7 +4,8 @@
 <html>
 <head>
     <title>Meal</title>
-    <link rel="stylesheet" href="css/style.css">
+    <base href="${pageContext.request.contextPath}/"/>
+    <link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
 <section>

@@ -21,10 +21,6 @@ import java.util.Objects;
 @RequestMapping(value = "/meals")
 public class JspMealController extends AbstractMealController {
 
-    @Autowired
-    public JspMealController(MealService service) {
-        super(service);
-    }
 
     @GetMapping()
     public String getAll(Model model){
@@ -55,9 +51,9 @@ public class JspMealController extends AbstractMealController {
                 request.getParameter("description"),
                 Integer.parseInt(request.getParameter("calories")));
         if (request.getParameter("id").isEmpty()) {
-            service.create(meal,userId);
+            super.create(meal);
         } else {
-            service.update(meal,getId(request));
+            super.update(meal,getId(request));
         }
 
         return "redirect:/meals";

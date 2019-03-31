@@ -21,12 +21,9 @@ import static ru.javawebinar.topjava.util.ValidationUtil.checkNew;
 abstract public class AbstractMealController{
     private static final Logger log = LoggerFactory.getLogger(AbstractMealController.class);
 
-    protected final MealService service;
-
     @Autowired
-    public AbstractMealController(MealService service) {
-        this.service = service;
-    }
+    protected  MealService service;
+
 
     public Meal get(int id) {
         int userId = SecurityUtil.authUserId();
